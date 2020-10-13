@@ -82,7 +82,7 @@ class tslFunctions():
     #登录
     def tsl_login(self):
         ts.ConnectServer("tsl.tinysoft.com.cn", 443)
-        dl = ts.LoginServer("htccqh", "Htfc2020!")  # Tuple(ErrNo,ErrMsg) 登陆用户
+        dl = ts.LoginServer("htccqh", "xx")  # Tuple(ErrNo,ErrMsg) 登陆用户
         if dl[0] == 0:
             print("登陆成功")
             print("服务器设置:", ts.GetService())
