@@ -42,8 +42,8 @@ class Get_rank_mysql(object):
         tsl = tslFunctions()
         tsl.tsl_login()
         
-#        conn_Local=create_engine(str(r"mysql+pymysql://root:root@localhost:3306/test"))
-        conn_Local=create_engine(str(r"mysql+pymysql://root:root@10.3.135.14:3306/test"))
+#        conn_Local=create_engine(str(r"mysql+pymysql://root:xxxx@localhost:3306/test"))
+        conn_Local=create_engine(str(r"mysql+pymysql://root:xxxx@10.3.135.14:3306/test"))
     
         self.__start=(dt.parser.parse(str(pd.read_sql("select max(截止日) from rank_raw",con=conn_Local\
                                                      ).values[0][0]))+datetime.timedelta(days=1)).strftime('%Y-%m-%d')
