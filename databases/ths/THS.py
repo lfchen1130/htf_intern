@@ -14,13 +14,13 @@ def write_log(symbol,e):
 
 def dl_THS_Daily(start,end,table_name,index_symbol):
     thsLogin = THS_iFinDLogin('htqh1015','990252')#调用登录函数，账号密码登录）
-#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://zcb:Quant2020!@192.168.1.4:8848/ashare_new"))
-    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
+#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://zcb:x@192.168.1.4:8848/ashare_new"))
+    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@localhost:3306/ths"))
     symbols = pd.read_sql(sql=f'select distinct symbol from index_components_ths where date BETWEEN "{start}" AND "{end}" and index_symbol="{index_symbol}" ',con=conn_LOCAL_mysql).values
 
     # symbols = [("001872.SZ",)]
-#    db = dl.Db('192.168.1.4','zcb','Quant2020!','ashare_new',8848)
-    db = dl.Db('10.3.135.14','root','root','ths',3306)
+#    db = dl.Db('192.168.1.4','zcb','x','ashare_new',8848)
+    db = dl.Db('10.3.135.14','root','x','ths',3306)
     if not (thsLogin == 0 or thsLogin == -201):
     # if False:
         print("登录失败")
