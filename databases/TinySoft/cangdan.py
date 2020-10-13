@@ -20,7 +20,7 @@ class Get_cangdan_mysql(object):
         tsl = tslFunctions()
         tsl.tsl_login()
         
-        conn_Local=create_engine(str(r"mysql+pymysql://root:root@localhost:3306/test"))
+        conn_Local=create_engine(str(r"mysql+pymysql://root:xxx@localhost:3306/test"))
     
         self.__start=(dt.parser.parse(str(pd.read_sql("select max(date) from register_values",con=conn_Local\
                                                      ).values[0][0]))+datetime.timedelta(days=1)).strftime('%Y-%m-%d')
