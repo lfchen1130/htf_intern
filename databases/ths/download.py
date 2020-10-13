@@ -306,7 +306,7 @@ def rewt_update_time(symbols):
         UPDATE data_description
         SET update_time = '%s' WHERE symbol = '%s'
         """%(now,symbol)
-        conn2 = pymysql.connect(host="10.3.135.12", port=3306, user="chenchen", passwd="chenchen", db="hedge_htf")
+        conn2 = pymysql.connect(host="10.3.135.12", port=3306, user="chenchen", passwd="x", db="hedge_htf")
         cursor2 = conn2.cursor()
         cursor2.execute(sql_update)
         conn2.commit()
