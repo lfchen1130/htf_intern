@@ -20,9 +20,9 @@ color_1 = (219.0 / 255, 0.0 / 255, 17.0 / 255)
 #流动bar图----------------------------------------------------------------------------------------------
 def plots():
 
-#con=pymysql.connect(host="localhost", port=3306, user="root", passwd="root", db="test")
-#con=pymysql.connect(host="10.3.135.11", port=3306, user="guest", passwd="123!@#qweQWE", db="cash_flow")
-    con = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:chenchen@10.3.135.11:3306/cash flow"))
+#con=pymysql.connect(host="localhost", port=3306, user="root", passwd="xxx", db="test")
+#con=pymysql.connect(host="10.3.135.11", port=3306, user="guest", passwd="xxx", db="cash_flow")
+    con = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:xxx@10.3.135.11:3306/cash flow"))
     value_turn_over=[]
     value_open_interest=[]
     smb_tmp=pd.DataFrame({},columns=['code','value_turn_over','value_open_interest','date_range_to','date_range_oi'])
@@ -142,8 +142,8 @@ def plots():
     #
     ###流动性line图----------------------------------------------------------------------------------------------
     ###前两幅图
-    ##con=pymysql.connect(host="localhost", port=3306, user="root", passwd="root", db="test")
-    #con = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:chenchen@10.3.135.11:3306/cash flow"))
+    ##con=pymysql.connect(host="localhost", port=3306, user="root", passwd="xxx", db="test")
+    #con = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:xxx@10.3.135.11:3306/cash flow"))
     fig, axarr = plt.subplots(1, 1, figsize=(8,6))
     i=0
     color=['r','k','gray']
@@ -194,8 +194,8 @@ def plots():
     
     
     ##中间两幅图============================================
-    ##con=pymysql.connect(host="10.3.135.14", port=3306, user="root", passwd="root", db="test")
-    #con = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:chenchen@10.3.135.11:3306/cash flow"))
+    ##con=pymysql.connect(host="10.3.135.14", port=3306, user="root", passwd="xxx", db="test")
+    #con = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:xxx@10.3.135.11:3306/cash flow"))
     fig, axarr = plt.subplots(1, 1, figsize=(8,6))
     ax2=axarr.twinx()
     i=0
@@ -271,8 +271,8 @@ def plots():
     plt.rcParams['font.sans-serif'] = ['kaiti']   
     
     ###后两幅图==============================================
-    ##con=pymysql.connect(host="localhost", port=3306, user="root", passwd="root", db="test")
-    #con = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:chenchen@10.3.135.11:3306/cash flow"))
+    ##con=pymysql.connect(host="localhost", port=3306, user="root", passwd="xxx", db="test")
+    #con = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:xxx@10.3.135.11:3306/cash flow"))
     fig, axarr = plt.subplots(1, 1, figsize=(8,6))
     i=0
     color=['r','k','gray']
@@ -414,10 +414,10 @@ def plots():
     #
     ###-----------------------------------------------------------------------------------------------------
     ##
-    ##con1=pymysql.connect(host="localhost", port=3306, user="root", passwd="root", db="test")
-    con1=pymysql.connect(host="10.3.135.13", port=3306, user="kerry", passwd="kerry", db="futures")
-    con0=pymysql.connect(host="10.3.135.14", port=3306, user="proxy", passwd="proxy", db="ths")
-#    con0=pymysql.connect(host="localhost", port=3306, user="root", passwd="root", db="ths")
+    ##con1=pymysql.connect(host="localhost", port=3306, user="root", passwd="x", db="test")
+    con1=pymysql.connect(host="10.3.135.13", port=3306, user="kerry", passwd="x", db="futures")
+    con0=pymysql.connect(host="10.3.135.14", port=3306, user="proxy", passwd="px", db="ths")
+#    con0=pymysql.connect(host="localhost", port=3306, user="root", passwd="rx", db="ths")
     color=['r','k','gray','peachpuff']
     
     for i  in range(3):
@@ -464,7 +464,7 @@ def plots():
 
 #---------------------------------------------------------------------------------------
 #def query(sql):
-#    con=pymysql.connect(host="10.3.135.13", port=3306, user="kerry", passwd="kerry", db="futures")
+#    con=pymysql.connect(host="10.3.135.13", port=3306, user="kerry", passwd="kx", db="futures")
 #    cur=con.cursor()
 #    cur.execute(sql)
 #    return cur.fetchall()
