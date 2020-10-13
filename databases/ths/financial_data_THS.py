@@ -11,8 +11,8 @@ import time
 #通过调用表最后日期和今日来确定时间段，再从时间段上挑选出所有月底的交易日
 def get_last_trading_date(start,end):
     
-#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:Quant2020!@192.168.1.3:3306/ashare_new1"))
-    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
+#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@192.168.1.3:3306/ashare_new1"))
+    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@localhost:3306/ths"))
     df = pd.read_sql(sql=f'select trade_date from sys_trade_date where exchange = "SZSE"',con=conn_LOCAL_mysql)
 #    df = df[df.trade_date < datetime.date(2001,1,1)]
 #    df = df[df.trade_date >= datetime.date(2000,1,1)]
@@ -44,12 +44,12 @@ def get_time_range_list(startdate, enddate):
 def dl_income(table_name):
     #'htqh1015' '990252'
     thsLogin = THS_iFinDLogin('htqh1015','990252')#调用登录函数，账号密码登录）
-    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
+    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@localhost:3306/ths"))
     db = dl.Db('10.3.135.14','root','root','ths',3306)
-#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:Quant2020!@192.168.1.3:3306/ashare_new1"))
+#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@192.168.1.3:3306/ashare_new1"))
     
     index_name = '000300.SH'
-#    db = dl.Db('192.168.1.3','root','Quant2020!','ashare_new1',3306)
+#    db = dl.Db('192.168.1.3','root','x','ashare_new1',3306)
     symbols = db.get_symbol('index_components_ths',index_name)
     # symbols = [("000001.SZ",)]
     if not (thsLogin == 0 or thsLogin == -201):
@@ -167,18 +167,18 @@ def dl_income(table_name):
                                 df.to_sql(table_name,if_exists='append',index=False,con=conn_LOCAL_mysql)
             
 def get_forecast_data(table_name,forecast_year):
-    #    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:Quant2020!@192.168.1.3:3306/ashare_new1"))
-    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
-    db = dl.Db('10.3.135.14','root','root','ths',3306)
+    #    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@192.168.1.3:3306/ashare_new1"))
+    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@localhost:3306/ths"))
+    db = dl.Db('10.3.135.14','root','x','ths',3306)
     index_name = '000300.SH'
     
-#    db = dl.Db('192.168.1.3','root','Quant2020!','ashare_new1',3306)
+#    db = dl.Db('192.168.1.3','root','x','ashare_new1',3306)
     symbols = db.get_symbol('index_components_ths',index_name)
     count=0
     
     while count<=len(symbols):
         try:
-            thsLogin = THS_iFinDLogin('htqh1015','990252')#调用登录函数，账号密码登录）
+            thsLogin = THS_iFinDLogin('htqh1015','x')#调用登录函数，账号密码登录）
 
         
             if not (thsLogin == 0 or thsLogin == -201):
