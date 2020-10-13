@@ -52,11 +52,11 @@ a.execute_stock_history_day(['stock_history_day'],'000300.SH')
 
 #入库sys_trade_date---------------------------------------------------
 
-#thsLogin = THS_iFinDLogin('htqh1015','990252')
-##    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:Quant2020!@192.168.1.3:3306/ashare_new1"))
-##    db = dl.Db('192.168.1.3','root','Quant2020!','ashare_new1',3306)
-#conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
-#db = dl.Db('10.3.135.14','root','root','ths',3306)
+#thsLogin = THS_iFinDLogin('htqh1015','x')
+##    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@192.168.1.3:3306/ashare_new1"))
+##    db = dl.Db('192.168.1.3','root','x','ashare_new1',3306)
+#conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@localhost:3306/ths"))
+#db = dl.Db('10.3.135.14','root','x','ths',3306)
 #now = datetime.datetime.now()
 #if not (thsLogin == 0 or thsLogin == -201):
 #    print("登录失败")
@@ -80,7 +80,7 @@ def get_last_trading_date(start,end):
     start=datetime.datetime.strptime(start,'%Y-%m-%d')
     end=datetime.datetime.strptime(end,'%Y-%m-%d')
 
-    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
+    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@localhost:3306/ths"))
     df = pd.read_sql(sql=f'select trade_date from sys_trade_date where exchange = "SZSE"',con=conn_LOCAL_mysql)
 #    df = df[df.trade_date < datetime.date(2001,1,1)]
 #    df = df[df.trade_date >= datetime.date(2000,1,1)]
