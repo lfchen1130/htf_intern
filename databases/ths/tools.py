@@ -8,7 +8,7 @@ from dateutil.relativedelta import relativedelta
 import urllib3
 from bs4 import BeautifulSoup
 
-db_conf = {'host': '127.0.0.1', 'port': 3306, 'user': 'root', 'passwd': '',
+db_conf = {'host': '127.0.0.1', 'port': 3306, 'user': 'root', 'passwd': 'x',
          'db': 'ashare_207', 'charset': 'utf8'}
 
 class DBUtil(object):
