@@ -18,8 +18,8 @@ import time
 # connect mysql
 dfs={}
 symbols=['IF','IC','IH','TS','TF','T']
-##conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/test"))
-conn_LOCAL_mysql  = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:chenchen@10.3.135.11:3306/cash flow"))
+##conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:xxxx@localhost:3306/test"))
+conn_LOCAL_mysql  = sqlalchemy.create_engine(str(r"mysql+pymysql://chenchen:xxxx@10.3.135.11:3306/cash flow"))
 df = pd.read_sql(sql=f'SELECT * FROM futures_vol_oi_daily WHERE code in ("IF","IC","IH","TS","TF","T") ORDER BY date DESC limit 0,12',con=conn_LOCAL_mysql)
 for symbol in symbols:
     df0=df[df.code==symbol].copy()
