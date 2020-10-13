@@ -10,11 +10,11 @@ import json
 def index_daily(symbols):
 
     thsLogin = THS_iFinDLogin('htqh1015','990252')#调用登录函数，账号密码登录）
-    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
+    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@localhost:3306/ths"))
     # symbols = pd.read_sql(sql=f'select distinct code from index_components',con=conn_LOCAL_mysql).values
     # print(symbols)
-#    db = dl.Db('192.168.1.3','root','Quant2020!','ashare_new1',3306)
-    db = dl.Db('10.3.135.14','root','root','ths',3306)
+#    db = dl.Db('192.168.1.3','root','x!','ashare_new1',3306)
+    db = dl.Db('10.3.135.14','root','x','ths',3306)
     if not (thsLogin == 0 or thsLogin == -201):
     # if False:
         print("登录失败")
