@@ -45,10 +45,10 @@ def adjust(symbol):
     
 def get_shibor(table_name):
     thsLogin = THS_iFinDLogin('htqh1015','990252')
-#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:Quant2020!@192.168.1.3:3306/ashare_new1"))
-#    db = dl.Db('192.168.1.3','root','Quant2020!','ashare_new1',3306)
-    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
-    db = dl.Db('10.3.135.14','root','root','ths',3306)
+#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:Qx@192.168.1.3:3306/ashare_new1"))
+#    db = dl.Db('192.168.1.3','root','Qux!','ashare_new1',3306)
+    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:rx@localhost:3306/ths"))
+    db = dl.Db('10.3.135.14','root','x','ths',3306)
 
     symbols = pd.read_sql(sql=f'select distinct symbol from eco_shibor_history',con=conn_LOCAL_mysql).values
     
@@ -78,10 +78,10 @@ def get_shibor(table_name):
 
 def get_exchange_rate(table_name):
     thsLogin = THS_iFinDLogin('htqh1015','990252')
-#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:Quant2020!@192.168.1.3:3306/ashare_new1"))
-#    db = dl.Db('192.168.1.3','root','Quant2020!','ashare_new1',3306)
-    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
-    db = dl.Db('10.3.135.14','root','root','ths',3306)
+#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@192.168.1.3:3306/ashare_new1"))
+#    db = dl.Db('192.168.1.3','root','x','ashare_new1',3306)
+    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@localhost:3306/ths"))
+    db = dl.Db('10.3.135.14','root','x','ths',3306)
 
     # symbols = pd.read_sql(sql=f'select distinct currency from eco_rmb_rate',con=conn_LOCAL_mysql).values
     # symbols = [("mgbp",),("meur",),("musd",),("mjpy",)]
@@ -112,10 +112,10 @@ def get_exchange_rate(table_name):
             
 def get_cpi(table_name):
     thsLogin = THS_iFinDLogin('htqh1015','990252')
-#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:Quant2020!@192.168.1.3:3306/ashare_new1"))
-#    db = dl.Db('192.168.1.3','root','Quant2020!','ashare_new1',3306)
-    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:root@localhost:3306/ths"))
-    db = dl.Db('10.3.135.14','root','root','ths',3306)
+#    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@192.168.1.3:3306/ashare_new1"))
+#    db = dl.Db('192.168.1.3','root','x','ashare_new1',3306)
+    conn_LOCAL_mysql = sqlalchemy.create_engine(str(r"mysql+pymysql://root:x@localhost:3306/ths"))
+    db = dl.Db('10.3.135.14','root','x','ths',3306)
 
     # symbols = pd.read_sql(sql=f'select distinct currency from eco_rmb_rate',con=conn_LOCAL_mysql).values
     # symbols = [("mgbp",),("meur",),("musd",),("mjpy",)]
